@@ -1,0 +1,21 @@
+[project]
+name = "job-finder"
+version = "1.0.1"
+description = "Job Finder — AI-powered job search with CV matching and cover letter generation"
+requires-python = ">=3.10"
+dependencies = ["imperal-sdk>=3.4.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23"]
+
+[tool.setuptools]
+py-modules = [
+    "main", "app", "api_client", "params",
+    "handlers_jobs", "handlers_settings",
+    "panels_main", "panels_side",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["."]
