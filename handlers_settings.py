@@ -11,6 +11,8 @@ from params import SaveJobSettingsParams
     "save_job_settings",
     description="Save Job Finder settings: JSearch API key and search filters (location, remote, job type, salary).",
     action_type="write",
+    chain_callable=True,
+    effects=["update:settings"],
     event="jobfinder.settings.saved",
 )
 async def fn_save_settings(ctx, params: SaveJobSettingsParams) -> ActionResult:

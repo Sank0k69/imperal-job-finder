@@ -1,11 +1,10 @@
 {
   "app_id": "job-finder",
-  "name": "Job Finder",
-  "description": "AI-powered job search — upload your CV, set filters, get matched positions and apply with personalized cover letters.",
   "version": "1.0.1",
-  "panels": [
-    {"id": "main",     "slot": "center",  "title": "Job Finder"},
-    {"id": "sidebar",  "slot": "left",  "title": "Saved Jobs"},
-    {"id": "settings", "slot": "right", "title": "Settings"}
-  ]
+  "manifest_schema_version": 3,
+  "display_name": "Job Finder",
+  "description": "AI-powered job search: upload your CV, set filters, get AI-matched positions from LinkedIn and Indeed, and apply with personalized cover letters.",
+  "icon": "icon.svg",
+  "actions_explicit": true,
+  "capabilities": []
 }

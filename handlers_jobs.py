@@ -25,6 +25,8 @@ def _err(data: dict) -> ActionResult:
         "or say 'here is my CV' / 'this is my resume'."
     ),
     action_type="write",
+    chain_callable=True,
+    effects=["update:cv"],
     event="jobfinder.cv.saved",
 )
 async def fn_save_cv(ctx, params: SaveCVParams) -> ActionResult:
@@ -46,6 +48,8 @@ async def fn_save_cv(ctx, params: SaveCVParams) -> ActionResult:
         "or want to create a CV without an existing resume."
     ),
     action_type="write",
+    chain_callable=True,
+    effects=["update:cv"],
     event="jobfinder.cv.saved",
 )
 async def fn_describe_self(ctx, params: DescribeSelfParams) -> ActionResult:
@@ -68,6 +72,8 @@ async def fn_describe_self(ctx, params: DescribeSelfParams) -> ActionResult:
         "Use when they ask to 'generate my CV', 'create my resume', or 'improve my CV'."
     ),
     action_type="write",
+    chain_callable=True,
+    effects=["update:cv"],
     event="jobfinder.cv.saved",
 )
 async def fn_generate_cv(ctx, params: GenerateCVParams) -> ActionResult:
@@ -151,6 +157,8 @@ async def fn_search_jobs(ctx, params: SearchJobsParams) -> ActionResult:
     "save_job",
     description="Bookmark a job from search results to the saved list.",
     action_type="write",
+    chain_callable=True,
+    effects=["create:saved_job"],
     event="jobfinder.job.saved",
 )
 async def fn_save_job(ctx, params: SaveJobParams) -> ActionResult:
@@ -173,6 +181,8 @@ async def fn_save_job(ctx, params: SaveJobParams) -> ActionResult:
         "Accepts job numbers like '1,2,3' or 'all'. Max 5 per request."
     ),
     action_type="write",
+    chain_callable=True,
+    effects=["create:application"],
     event="jobfinder.applied",
 )
 async def fn_apply_jobs(ctx, params: ApplyJobsParams) -> ActionResult:

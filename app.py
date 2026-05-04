@@ -7,7 +7,14 @@ from imperal_sdk import Extension, ChatExtension
 SERVER_URL     = "https://mos.lexa-lox.xyz"
 SERVER_API_KEY = "dd5f08814b30d05ff8b573231a14a6826c39d7c07f226995c9a8b1573ceebb90"
 
-ext = Extension("job-finder", version="1.0.0")
+ext = Extension(
+    "job-finder",
+    version="1.0.0",
+    display_name="Job Finder",
+    description="AI-powered job search: upload your CV, set filters, get AI-matched positions from LinkedIn and Indeed, and apply with personalized cover letters.",
+    icon="icon.svg",
+    actions_explicit=True,
+)
 chat = ChatExtension(
     ext,
     tool_name="job_finder",
