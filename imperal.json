@@ -6,5 +6,10 @@
   "description": "AI-powered job search: upload your CV, set filters, get AI-matched positions from LinkedIn and Indeed, and apply with personalized cover letters.",
   "icon": "icon.svg",
   "actions_explicit": true,
-  "capabilities": []
+  "capabilities": [
+    "CV Upload & Analysis",
+    "AI Job Matching",
+    "Cover Letter Writing",
+    "Job Search Filters"
+  ]
 }
